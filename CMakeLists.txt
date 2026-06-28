@@ -22,7 +22,11 @@ set(USB_PID 0x619B)
 
 if(ESP_PLATFORM)
     set(DEBUG_APDU 1)
-    set(EXTRA_COMPONENT_DIRS src/fido2 pico-keys-sdk/src)
+    set(EXTRA_COMPONENT_DIRS
+        src/fido2
+        pico-keys-sdk/src
+        pico-keys-sdk/config/esp32/components
+    )
     include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 else()
 
